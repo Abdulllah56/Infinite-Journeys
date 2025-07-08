@@ -36,5 +36,9 @@
   "scripts": {
   "dev": "next dev",
   "build": "next build && next export"
+},
+
+  "rules": {
+  "react/no-unescaped-entities": "off"
 }
 }
