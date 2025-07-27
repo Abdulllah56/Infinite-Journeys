@@ -1,6 +1,4 @@
 
-import Navbar from "@/components/Navbar";
-import Footer from "@/components/Footer";
 import Image from 'next/image';
 import LandingPageCard from "@/components/Home/LandingPageCard";
 import TestimonialCarousel from "@/components/Home/TestimonialCarousel";
@@ -22,10 +20,7 @@ export default function Home() {
       "linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://assets.simpleviewinc.com/simpleview/image/upload/c_fill,h_1000,q_50,w_1920/v1/clients/fairbanks/Eastern_AK_Range_Reflection_JPEG_cropped_e5f902de-c2f3-43b4-9b82-8b8d3d21f9ad.jpg')",
   }}
 >
-  {/* Navbar - Positioned at the top */}
-  <div className="absolute top-0 left-0 w-full">
-    <Navbar />
-  </div>
+  
 
   {/* Hero Content - Vertically Centered */}
   <div className="flex flex-col justify-center items-center h-full text-center text-white px-4">
@@ -145,7 +140,6 @@ export default function Home() {
         <br />
         <NewsletterSignup />
         <br />
-        <Footer />
 
       </main>
 

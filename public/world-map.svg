@@ -1,0 +1,38 @@
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 500" width="1000" height="500">
+  <defs>
+    <style>
+      .land { fill: #4a90e2; stroke: #2c5282; stroke-width: 0.5; opacity: 0.8; }
+      .ocean { fill: #e6f3ff; }
+      .marker { fill: #ff6b6b; stroke: #fff; stroke-width: 2; }
+    </style>
+  </defs>
+  
+  <rect width="1000" height="500" class="ocean"/>
+  
+  <!-- North America -->
+  <path class="land" d="M50 80 L180 60 L220 80 L250 100 L280 120 L300 140 L280 180 L250 200 L200 220 L150 200 L100 180 L70 140 Z"/>
+  
+  <!-- South America -->
+  <path class="land" d="M200 250 L250 240 L280 260 L300 300 L290 350 L270 380 L240 400 L210 380 L190 340 L180 300 Z"/>
+  
+  <!-- Europe -->
+  <path class="land" d="M450 80 L520 70 L580 85 L600 110 L580 130 L520 140 L480 130 L450 110 Z"/>
+  
+  <!-- Africa -->
+  <path class="land" d="M480 150 L550 140 L580 160 L600 200 L590 280 L570 320 L540 350 L510 340 L490 300 L470 240 L460 180 Z"/>
+  
+  <!-- Asia -->
+  <path class="land" d="M600 60 L750 50 L850 70 L900 100 L920 140 L900 180 L850 200 L750 190 L650 180 L620 140 L600 100 Z"/>
+  
+  <!-- Australia -->
+  <path class="land" d="M750 300 L850 290 L880 310 L870 340 L840 350 L780 340 L750 320 Z"/>
+  
+  <!-- Travel destination markers -->
+  <circle cx="150" cy="120" r="5" class="marker"/>
+  <circle cx="230" cy="300" r="5" class="marker"/>
+  <circle cx="500" cy="100" r="5" class="marker"/>
+  <circle cx="520" cy="220" r="5" class="marker"/>
+  <circle cx="700" cy="120" r="5" class="marker"/>
+  <circle cx="800" cy="320" r="5" class="marker"/>
+</svg>
