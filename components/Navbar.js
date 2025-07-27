@@ -181,4 +181,3 @@ const Navbar = () => {
 };
 
 export default Navbar;
-```The code modification involves removing login and signup links and retaining the contact link in the Navbar component.

@@ -7,7 +7,6 @@ import TestimonialCarousel from "@/components/Home/TestimonialCarousel";
 import WCU from "@/components/Home/WCU"
 import NewsletterSignup from "@/components/Home/Newsletter";
 import Contact from "@/components/Home/Contact"
-import Head from 'next/head';
 
 export default function Home() {
   return (
