@@ -1,6 +1,5 @@
 import React from 'react'
 import DestinationHero from '@/components/destinations/DestinationHero'
-import Navbar from '@/components/Navbar'
 import PopularDestinations from '@/components/destinations/PopularDestinations'
 import TopExperiences from '@/components/destinations/TopExperiences'
 import TravelDeals from '@/components/destinations/TravelDeals'
@@ -14,9 +13,6 @@ import NormalFooter from '@/components/NormalFooter'
 const page = () => {
   return (
     <div>
-        <div className='bg-blue-950'>
-        <Navbar  />
-        </div>
 <DestinationHero />
 <br />
 <PopularDestinations />

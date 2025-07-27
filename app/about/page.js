@@ -1,6 +1,5 @@
 import React from 'react'
 import Link from 'next/link'
-import Navbar from '@/components/Navbar'
 import AboutUsHero from '@/components/about/AboutHeroSection'
 import OurStory from '@/components/about/OurStory'
 import VisionMission from '@/components/about/VisionMission'
@@ -15,9 +14,6 @@ import ExperienceHighlights from '@/components/experiences/ExperienceHighlights'
 const page = () => {
   return (
     <div>
-      <div className='bg-blue-950'>
-<Navbar />
-</div>
 <AboutUsHero />
 <OurStory />
 <VisionMission />
