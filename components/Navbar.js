@@ -1,4 +1,3 @@
-
 "use client"
 
 import Link from 'next/link';
@@ -7,105 +6,73 @@ import { useState } from 'react';
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
 
-  const toggleMenu = () => {
+  const toggleNavbar = () => {
     setIsOpen(!isOpen);
   };
 
   return (
-    <nav className="bg-blue-950 text-white p-4 fixed top-0 left-0 right-0 z-50 shadow-lg">
-      <div className="container mx-auto flex justify-between items-center">
-        {/* Logo */}
-        <div className="text-2xl font-bold">
-          <Link href="/" className="hover:text-blue-300 transition-colors">
-            Infinite Journeys
-          </Link>
-        </div>
-
-        {/* Desktop Menu */}
-        <div className="hidden md:flex space-x-8">
-          <Link href="/" className="hover:text-blue-300 transition-colors font-medium">
-            Home
-          </Link>
-          <Link href="/destinations" className="hover:text-blue-300 transition-colors font-medium">
-            Destinations
-          </Link>
-          <Link href="/experiences" className="hover:text-blue-300 transition-colors font-medium">
-            Experiences
-          </Link>
-          <Link href="/about" className="hover:text-blue-300 transition-colors font-medium">
-            About
-          </Link>
-          <Link href="/contact" className="hover:text-blue-300 transition-colors font-medium">
-            Contact
-          </Link>
-        </div>
-
-        {/* Mobile Menu Button */}
-        <div className="md:hidden">
-          <button
-            onClick={toggleMenu}
-            className="text-white focus:outline-none focus:text-blue-300"
-          >
-            <svg
-              className="w-6 h-6"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d={isOpen ? "M6 18L18 6M6 6l12 12" : "M4 6h16M4 12h16M4 18h16"}
-              />
-            </svg>
-          </button>
-        </div>
-      </div>
-
-      {/* Mobile Menu */}
-      {isOpen && (
-        <div className="md:hidden mt-4 pb-4">
-          <div className="flex flex-col space-y-4">
-            <Link
-              href="/"
-              className="hover:text-blue-300 transition-colors font-medium"
-              onClick={toggleMenu}
-            >
+    <nav className="bg-white shadow-lg fixed w-full z-50 top-0">
+      <div className="max-w-6xl mx-auto px-4">
+        <div className="flex justify-between">
+          <div className="flex space-x-7">
+            <div>
+              <Link href="/" className="flex items-center py-4 px-2">
+                <span className="font-semibold text-gray-500 text-lg">Infinite Journeys</span>
+              </Link>
+            </div>
+          </div>
+          <div className="hidden md:flex items-center space-x-3">
+            <Link href="/" className="py-4 px-2 text-gray-500 font-semibold hover:text-blue-500 transition duration-300">
               Home
             </Link>
-            <Link
-              href="/destinations"
-              className="hover:text-blue-300 transition-colors font-medium"
-              onClick={toggleMenu}
-            >
+            <Link href="/destinations" className="py-4 px-2 text-gray-500 font-semibold hover:text-blue-500 transition duration-300">
               Destinations
             </Link>
-            <Link
-              href="/experiences"
-              className="hover:text-blue-300 transition-colors font-medium"
-              onClick={toggleMenu}
-            >
+            <Link href="/experiences" className="py-4 px-2 text-gray-500 font-semibold hover:text-blue-500 transition duration-300">
               Experiences
             </Link>
-            <Link
-              href="/about"
-              className="hover:text-blue-300 transition-colors font-medium"
-              onClick={toggleMenu}
-            >
+            <Link href="/about" className="py-4 px-2 text-gray-500 font-semibold hover:text-blue-500 transition duration-300">
               About
             </Link>
-            <Link
-              href="/contact"
-              className="hover:text-blue-300 transition-colors font-medium"
-              onClick={toggleMenu}
-            >
+            <Link href="/contact" className="py-4 px-2 text-gray-500 font-semibold hover:text-blue-500 transition duration-300">
               Contact
             </Link>
           </div>
+          <div className="md:hidden flex items-center">
+            <button className="outline-none mobile-menu-button" onClick={toggleNavbar}>
+              <svg
+                className="w-6 h-6 text-gray-500 hover:text-blue-500"
+                x-show="!showMenu"
+                fill="none"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth="2"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path d="M4 6h16M4 12h16M4 18h16"></path>
+              </svg>
+            </button>
+          </div>
         </div>
-      )}
+      </div>
+      <div className={`${isOpen ? 'block' : 'hidden'} mobile-menu md:hidden`}>
+        <Link href="/" className="block py-2 px-4 text-sm hover:bg-gray-200">
+          Home
+        </Link>
+        <Link href="/destinations" className="block py-2 px-4 text-sm hover:bg-gray-200">
+          Destinations
+        </Link>
+        <Link href="/experiences" className="block py-2 px-4 text-sm hover:bg-gray-200">
+          Experiences
+        </Link>
+        <Link href="/about" className="block py-2 px-4 text-sm hover:bg-gray-200">
+          About
+        </Link>
+        <Link href="/contact" className="block py-2 px-4 text-sm hover:bg-gray-200">
+          Contact
+        </Link>
+      </div>
     </nav>
   );
 };
