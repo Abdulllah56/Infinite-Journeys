@@ -39,43 +39,142 @@ export default function Home() {
 
 
 
-<h2 className="text-4xl font-extrabold text-center mb-12 text-blue-950 mt-5">Featured Destinations</h2>
-
-        <div className="destinations flex justify-center items-center ">
-
-          <div className="max-w-sm rounded overflow-hidden shadow-lg m-6 transform duration-500 transition-transform  hover:-translate-y-2">
-            <img
-              src="https://cdn.britannica.com/30/94430-050-D0FC51CD/Niagara-Falls.jpg"
-              alt="Alaska"
-              className="h-48 w-full object-cover"
-            />
-            <div className="p-4">
-              <div className="font-bold text-xl mb-2">Explore Niagara Falls</div>
-              <p className="text-gray-700 text-base">
-                One of the best touring point in world, explore the breasthtaking beauty. Create memories with Infinite Journeys.
-              </p>
-              <button className="px-4 py-2 mt-4 text-white  bg-blue-950 hover:bg-gray-800 rounded">Learn More</button>
-            </div>
+{/* Featured Destinations Section */}
+        <section className="py-20 bg-gradient-to-br from-blue-50 via-white to-blue-100 relative overflow-hidden">
+          {/* Background Pattern */}
+          <div className="absolute inset-0 opacity-5">
+            <div className="absolute top-10 left-10 w-72 h-72 bg-blue-400 rounded-full filter blur-3xl"></div>
+            <div className="absolute bottom-10 right-10 w-96 h-96 bg-blue-600 rounded-full filter blur-3xl"></div>
           </div>
 
-          <div className="max-w-sm rounded overflow-hidden shadow-lg m-6 transform duration-500 transition-transform  hover:-translate-y-2">
-            <img
-              src="https://www.civitatis.com/blog/wp-content/uploads/2021/06/bahia-glaciares-alaska-1280x851.jpg"
-              alt="Alaska"
-              className="h-48 w-full object-cover"
-            />
-            <div className="p-4">
-              <div className="font-bold text-xl mb-2">Explore Alaska</div>
-              <p className="text-gray-700 text-base">
-                Discover the breathtaking landscapes and majestic glaciers of Alaska with Infinite Journeys.
+          <div className="container mx-auto px-6 relative z-10">
+            <div className="text-center mb-16">
+              <h2 className="text-6xl font-extrabold text-blue-950 mb-6 bg-clip-text text-transparent bg-gradient-to-r from-blue-800 to-blue-950">
+                Featured Destinations
+              </h2>
+              <div className="w-32 h-1 bg-gradient-to-r from-blue-600 to-blue-800 mx-auto mb-6"></div>
+              <p className="text-xl text-blue-700 max-w-3xl mx-auto">
+                Discover breathtaking destinations that will create memories to last a lifetime
               </p>
-              <button className="px-4 py-2 mt-4 text-white  bg-blue-950 hover:bg-gray-800 rounded">
-                Learn More
+            </div>
+
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-6xl mx-auto">
+              {/* Niagara Falls Card */}
+              <div className="group relative bg-white rounded-3xl shadow-2xl overflow-hidden transform hover:-translate-y-4 transition-all duration-500 hover:shadow-3xl">
+                <div className="absolute inset-0 bg-gradient-to-tr from-blue-600/20 to-purple-600/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                
+                <div className="relative h-64 overflow-hidden">
+                  <img
+                    src="https://cdn.britannica.com/30/94430-050-D0FC51CD/Niagara-Falls.jpg"
+                    alt="Niagara Falls"
+                    className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent"></div>
+                  <div className="absolute top-6 left-6">
+                    <span className="bg-blue-600 text-white px-4 py-2 rounded-full text-sm font-semibold shadow-lg">
+                      🌊 Natural Wonder
+                    </span>
+                  </div>
+                  <div className="absolute bottom-6 right-6">
+                    <div className="bg-white/90 backdrop-blur-sm rounded-full p-3 shadow-lg transform group-hover:scale-110 transition-transform duration-300">
+                      <svg className="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
+                      </svg>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="p-8">
+                  <h3 className="text-3xl font-bold text-blue-950 mb-4 group-hover:text-blue-700 transition-colors duration-300">
+                    Explore Niagara Falls
+                  </h3>
+                  <p className="text-gray-600 text-lg leading-relaxed mb-6">
+                    One of the world's most spectacular natural wonders. Experience the thundering power and breathtaking beauty that creates unforgettable memories.
+                  </p>
+                  
+                  <div className="flex items-center justify-between mb-6">
+                    <div className="flex items-center space-x-4">
+                      <div className="flex items-center space-x-1">
+                        <span className="text-yellow-400">★★★★★</span>
+                        <span className="text-gray-600 text-sm">(4.9)</span>
+                      </div>
+                      <span className="text-blue-600 font-semibold">From $299</span>
+                    </div>
+                  </div>
+
+                  <button className="w-full bg-gradient-to-r from-blue-600 to-blue-800 hover:from-blue-700 hover:to-blue-900 text-white py-4 px-6 rounded-2xl font-semibold text-lg transition-all duration-300 transform group-hover:scale-105 shadow-lg hover:shadow-xl">
+                    Learn More
+                  </button>
+                </div>
+              </div>
+
+              {/* Alaska Card */}
+              <div className="group relative bg-white rounded-3xl shadow-2xl overflow-hidden transform hover:-translate-y-4 transition-all duration-500 hover:shadow-3xl">
+                <div className="absolute inset-0 bg-gradient-to-tr from-blue-600/20 to-teal-600/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                
+                <div className="relative h-64 overflow-hidden">
+                  <img
+                    src="https://www.civitatis.com/blog/wp-content/uploads/2021/06/bahia-glaciares-alaska-1280x851.jpg"
+                    alt="Alaska"
+                    className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent"></div>
+                  <div className="absolute top-6 left-6">
+                    <span className="bg-teal-600 text-white px-4 py-2 rounded-full text-sm font-semibold shadow-lg">
+                      🏔️ Adventure
+                    </span>
+                  </div>
+                  <div className="absolute top-6 right-6">
+                    <span className="bg-red-500 text-white px-3 py-1 rounded-full text-xs font-bold animate-pulse">
+                      30% OFF
+                    </span>
+                  </div>
+                  <div className="absolute bottom-6 right-6">
+                    <div className="bg-white/90 backdrop-blur-sm rounded-full p-3 shadow-lg transform group-hover:scale-110 transition-transform duration-300">
+                      <svg className="w-6 h-6 text-teal-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z"/>
+                      </svg>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="p-8">
+                  <h3 className="text-3xl font-bold text-blue-950 mb-4 group-hover:text-teal-700 transition-colors duration-300">
+                    Explore Alaska
+                  </h3>
+                  <p className="text-gray-600 text-lg leading-relaxed mb-6">
+                    Discover the breathtaking landscapes and majestic glaciers of Alaska. An epic adventure through pristine wilderness and stunning natural beauty.
+                  </p>
+                  
+                  <div className="flex items-center justify-between mb-6">
+                    <div className="flex items-center space-x-4">
+                      <div className="flex items-center space-x-1">
+                        <span className="text-yellow-400">★★★★★</span>
+                        <span className="text-gray-600 text-sm">(4.8)</span>
+                      </div>
+                      <div className="flex items-center space-x-2">
+                        <span className="text-gray-400 line-through">$899</span>
+                        <span className="text-teal-600 font-semibold">From $629</span>
+                      </div>
+                    </div>
+                  </div>
+
+                  <button className="w-full bg-gradient-to-r from-teal-600 to-blue-600 hover:from-teal-700 hover:to-blue-700 text-white py-4 px-6 rounded-2xl font-semibold text-lg transition-all duration-300 transform group-hover:scale-105 shadow-lg hover:shadow-xl">
+                    Learn More
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            {/* Additional Call to Action */}
+            <div className="text-center mt-16">
+              <button className="bg-gradient-to-r from-blue-600 via-blue-700 to-blue-800 hover:from-blue-700 hover:via-blue-800 hover:to-blue-900 text-white py-4 px-12 rounded-full text-xl font-semibold transition-all duration-300 transform hover:scale-105 shadow-2xl hover:shadow-3xl">
+                Explore All Destinations
               </button>
             </div>
           </div>
-
-        </div>
+        </section>
 
         {/* Services We Offer Section */}
         <section className="py-20 bg-gradient-to-br from-gray-900 via-blue-900 to-gray-900 relative overflow-hidden">
@@ -272,21 +371,81 @@ export default function Home() {
           </div>
         </section>
 
-        <LandingPageCard />
-        <center>
-          <button className=" flex bg-blue-950 text-white py-2 px-4 rounded-full hover:bg-gray-800 transition-colors duration-300 justify-center items-center mt-6">
-            View All Packages
-          </button>
-        </center>
-        <br />
-        <TestimonialCarousel />
-        <br />
-        <WCU />
-        <br />
-        <Contact />
-        <br />
-        <NewsletterSignup />
-        <br />
+        {/* Popular Destinations Section */}
+        <section className="py-20 bg-gradient-to-br from-white via-blue-50 to-white relative">
+          {/* Background Elements */}
+          <div className="absolute inset-0 overflow-hidden">
+            <div className="absolute -top-40 -right-40 w-80 h-80 bg-blue-200 rounded-full mix-blend-multiply filter blur-3xl opacity-30"></div>
+            <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-blue-300 rounded-full mix-blend-multiply filter blur-3xl opacity-30"></div>
+          </div>
+
+          <div className="relative z-10">
+            <LandingPageCard />
+            
+            <div className="text-center mt-16">
+              <div className="inline-flex items-center bg-gradient-to-r from-blue-600 to-blue-800 hover:from-blue-700 hover:to-blue-900 text-white py-4 px-12 rounded-full text-xl font-semibold transition-all duration-300 transform hover:scale-105 shadow-2xl hover:shadow-3xl cursor-pointer group">
+                <span className="mr-3">View All Packages</span>
+                <svg className="w-6 h-6 transform group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+                </svg>
+              </div>
+            </div>
+          </div>
+        </section>
+        {/* Testimonials Section */}
+        <section className="py-20 bg-gradient-to-br from-blue-900 via-blue-800 to-blue-900 relative overflow-hidden">
+          <div className="absolute inset-0">
+            <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-r from-blue-600/10 to-purple-600/10"></div>
+            <div className="absolute top-1/3 left-1/3 w-64 h-64 bg-white rounded-full filter blur-3xl opacity-5"></div>
+            <div className="absolute bottom-1/3 right-1/3 w-80 h-80 bg-blue-400 rounded-full filter blur-3xl opacity-10"></div>
+          </div>
+          
+          <div className="container mx-auto px-6 relative z-10">
+            <div className="text-center mb-16">
+              <h2 className="text-6xl font-extrabold text-white mb-6 bg-clip-text text-transparent bg-gradient-to-r from-white to-blue-200">
+                What Our Travelers Say
+              </h2>
+              <div className="w-32 h-1 bg-gradient-to-r from-blue-400 to-white mx-auto mb-6"></div>
+              <p className="text-xl text-blue-200 max-w-3xl mx-auto">
+                Real stories from real travelers who have experienced the magic of Infinite Journeys
+              </p>
+            </div>
+            
+            <div className="bg-white/10 backdrop-blur-sm rounded-3xl p-12 shadow-2xl border border-white/20">
+              <TestimonialCarousel />
+            </div>
+          </div>
+        </section>
+
+        {/* Why Choose Us Section */}
+        <section className="py-20 bg-gradient-to-br from-blue-50 via-white to-blue-100 relative">
+          <div className="absolute inset-0 overflow-hidden">
+            <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-blue-200 rounded-full mix-blend-multiply filter blur-3xl opacity-20"></div>
+            <div className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-purple-200 rounded-full mix-blend-multiply filter blur-3xl opacity-20"></div>
+          </div>
+          
+          <div className="relative z-10">
+            <WCU />
+          </div>
+        </section>
+
+        {/* Contact Section */}
+        <section className="py-20 bg-gradient-to-br from-gray-900 via-blue-900 to-gray-900 relative overflow-hidden">
+          <div className="absolute inset-0">
+            <div className="absolute inset-0 bg-gradient-to-r from-blue-600/20 to-purple-600/20"></div>
+            <div className="absolute top-1/4 right-1/4 w-72 h-72 bg-blue-400 rounded-full filter blur-3xl opacity-20"></div>
+            <div className="absolute bottom-1/4 left-1/4 w-96 h-96 bg-purple-400 rounded-full filter blur-3xl opacity-15"></div>
+          </div>
+          
+          <div className="relative z-10">
+            <Contact />
+          </div>
+        </section>
+
+        {/* Newsletter Section */}
+        <section className="relative">
+          <NewsletterSignup />
+        </section>
 
       </main>
 
