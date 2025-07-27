@@ -2,7 +2,8 @@
 const nextConfig = {
   output: 'export',
   images: {
-    domains: ['res.cloudinary.com'],
+    domains: ['images.unsplash.com', 'res.cloudinary.com'],
+    unoptimized: true,
   },
   eslint: {
     ignoreDuringBuilds: true,

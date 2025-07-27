@@ -117,6 +117,9 @@ const Navbar = () => {
                   <FaSearch />
                 </button>
               </div>
+               <Link href="/contact" className="bg-white text-blue-950 px-4 py-2 rounded-lg font-semibold hover:bg-gray-100 transition duration-300">
+            Contact Us
+          </Link>
             </div>
           </div>
           <div className="-mr-2 flex lg:hidden">
@@ -178,3 +181,4 @@ const Navbar = () => {
 };
 
 export default Navbar;
+```The code modification involves removing login and signup links and retaining the contact link in the Navbar component.
