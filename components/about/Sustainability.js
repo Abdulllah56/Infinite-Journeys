@@ -1,5 +1,5 @@
 // components/Sustainability.js
-
+"use client"
 import React from 'react';
 import { FaLeaf, FaHandsHelping, FaHome, FaRecycle, FaTree, FaWater } from 'react-icons/fa';
 
