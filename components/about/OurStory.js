@@ -1,5 +1,5 @@
 // components/OurStory.js
-
+"use client"
 import React from 'react';
 import { FaHeart, FaGlobe, FaUsers, FaStar } from 'react-icons/fa';
 
