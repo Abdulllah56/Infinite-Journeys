@@ -1,5 +1,5 @@
 // components/OurJourney.js
-
+"use client"
 import React from 'react';
 import { FaPlane, FaGlobe, FaSuitcase, FaRocket, FaAward, FaUsers } from 'react-icons/fa';
 

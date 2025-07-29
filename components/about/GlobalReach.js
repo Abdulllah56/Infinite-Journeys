@@ -1,5 +1,5 @@
 // components/GlobalReach.js
-
+"use client"
 import React from 'react';
 import { FaGlobeAmericas, FaPlaneDeparture, FaMapMarkedAlt, FaUsers, FaAward, FaHeart } from 'react-icons/fa';
 
