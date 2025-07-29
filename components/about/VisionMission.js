@@ -1,5 +1,5 @@
 // components/MissionVision.js
-
+"use client"
 import React from 'react';
 import { FaRocket, FaEye, FaHeart, FaGlobe, FaStar, FaUsers } from 'react-icons/fa';
 
