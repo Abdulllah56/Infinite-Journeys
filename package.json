@@ -13,7 +13,7 @@
     "autoprefixer": "^10.4.21",
     "bootstrap": "^5.3.3",
     "critters": "^0.0.23",
-    "framer-motion": "^12.23.11",
+    "framer-motion": "^11.1.14",
     "leaflet": "^1.9.4",
     "link": "^2.1.1",
     "next": "14.2.5",
