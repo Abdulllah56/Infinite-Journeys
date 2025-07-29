@@ -1,4 +1,9 @@
 import React from 'react'
+export const metadata = {
+  title: 'Infinite Journeys | About Us',
+  description: 'Learn more about Infinite Journeys and our mission',
+}
+
 import Link from 'next/link'
 import AboutUsHero from '@/components/about/AboutHeroSection'
 import OurStory from '@/components/about/OurStory'

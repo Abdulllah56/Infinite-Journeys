@@ -8,57 +8,60 @@ const photos = [
     altText: 'Beautiful Mountain View',
   },
   {
-    imageUrl: 'https://images.unsplash.com/photo-1578926372774-7d0bb4775b0f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080',
-    altText: 'Snowy Mountains',
+    imageUrl: 'https://images.unsplash.com/photo-1507525428034-b723cf961d3e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080',
+    altText: 'Tropical Beach Paradise',
   },
   {
     imageUrl: 'https://images.unsplash.com/photo-1506748686214-e9df14d4d9d0?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080',
     altText: 'Lush Green Forest',
   },
   {
-    imageUrl: 'https://images.unsplash.com/photo-1606787620597-8b728ddc530c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080',
-    altText: 'Frozen Lake and Snowy Landscape',
-  },
-  {
-    imageUrl: 'https://images.unsplash.com/photo-1507525428034-b723cf961d3e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080',
-    altText: 'Tropical Beach Paradise',
-  },
-  {
     imageUrl: 'https://images.unsplash.com/photo-1578926372774-7d0bb4775b0f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080',
-    altText: 'Snowy Mountain',
-  },
-  {
-    imageUrl: 'https://images.unsplash.com/photo-1519985176271-adb1088fa94c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080',
-    altText: 'Mountain View',
+    altText: 'Snowy Mountain Peak',
   },
   {
     imageUrl: 'https://images.unsplash.com/photo-1580475892133-24755e9f486d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080',
     altText: 'River in Forest',
+  },
+  {
+    imageUrl: 'https://images.unsplash.com/photo-1469474968028-56623f02e42e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080',
+    altText: 'Desert Landscape',
+  },
+  {
+    imageUrl: 'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080',
+    altText: 'Mountain Lake',
+  },
+  {
+    imageUrl: 'https://images.unsplash.com/photo-1441974231531-c6227db76b6e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080',
+    altText: 'Forest Path',
   },
 ];
 
 const PhotoGallery = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const slidesToShow = 2; // Number of images to display at a time
-  const [isTransitioning, setIsTransitioning] = useState(false);
+  const maxSlides = Math.max(0, photos.length - slidesToShow + 1); // Maximum number of slide positions
   const timeoutRef = useRef(null);
 
   // Function to go to the next slide
   const goToNext = () => {
-    setIsTransitioning(true); // Set transitioning state to trigger smooth animation
-    setTimeout(() => {
-      setCurrentIndex((prevIndex) =>
-        prevIndex === photos.length - slidesToShow ? 0 : prevIndex + 1
-      );
-      setIsTransitioning(false); // Reset transitioning state after transition
-    }, 300);
+    setCurrentIndex((prevIndex) =>
+      prevIndex >= maxSlides - 1 ? 0 : prevIndex + 1
+    );
+  };
+
+  // Function to go to the previous slide
+  const goToPrevious = () => {
+    setCurrentIndex((prevIndex) =>
+      prevIndex === 0 ? maxSlides - 1 : prevIndex - 1
+    );
   };
 
   // Autoplay with smooth transitions
   useEffect(() => {
     const interval = setInterval(goToNext, 4000); // Auto change slide every 4 seconds
     return () => clearInterval(interval); // Clean up the interval on component unmount
-  }, []);
+  }, [maxSlides]);
 
   // Handle swipe gestures for touch devices
   const handleSwipe = (direction) => {
@@ -79,17 +82,6 @@ const PhotoGallery = () => {
     if (swipeDistance < -50) handleSwipe('left'); // Swipe left
   };
 
-  // Function to go to the previous slide
-  const goToPrevious = () => {
-    setIsTransitioning(true); // Set transitioning state to trigger smooth animation
-    setTimeout(() => {
-      setCurrentIndex((prevIndex) =>
-        prevIndex === 0 ? photos.length - slidesToShow : prevIndex - 1
-      );
-      setIsTransitioning(false); // Reset transitioning state after transition
-    }, 300);
-  };
-
   return (
     <section className="py-16 bg-gray-100">
       <div className="container mx-auto px-6 text-center">
@@ -101,21 +93,29 @@ const PhotoGallery = () => {
 
         {/* Carousel */}
         <div
-          className="relative w-full overflow-hidden rounded-lg shadow-lg"
+          className="relative w-full max-w-6xl mx-auto overflow-hidden rounded-lg shadow-lg bg-white"
           onTouchStart={startSwipe}
           onTouchEnd={endSwipe}
-          style={{ height: '400px' }} // Height for the images
+          style={{ height: '400px' }}
         >
           <div
-            className="absolute flex w-full h-full transition-transform duration-700 ease-in-out"
-            style={{ transform: `translateX(-${currentIndex * (100 / slidesToShow)}%)` }}
+            className="flex w-full h-full transition-transform duration-700 ease-in-out"
+            style={{ 
+              transform: `translateX(-${currentIndex * (100 / slidesToShow)}%)`,
+              width: `${(photos.length / slidesToShow) * 100}%`
+            }}
           >
             {photos.map((photo, index) => (
-              <div key={index} className="w-1/2 h-full">
+              <div 
+                key={index} 
+                className="flex-shrink-0 h-full"
+                style={{ width: `${100 / photos.length}%` }}
+              >
                 <img
                   src={photo.imageUrl}
                   alt={photo.altText}
                   className="w-full h-full object-cover"
+                  loading="lazy"
                 />
               </div>
             ))}
@@ -124,29 +124,38 @@ const PhotoGallery = () => {
           {/* Left Arrow */}
           <button
             onClick={goToPrevious}
-            className="absolute top-1/2 left-2 transform -translate-y-1/2 bg-blue-950 text-white rounded-full p-2 hover:bg-blue-900 transition duration-300"
+            className="absolute top-1/2 left-4 transform -translate-y-1/2 bg-blue-950 bg-opacity-80 text-white rounded-full p-3 hover:bg-blue-900 hover:bg-opacity-90 transition-all duration-300 shadow-lg z-10"
+            aria-label="Previous images"
           >
-            &#10094;
+            <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+            </svg>
           </button>
 
           {/* Right Arrow */}
           <button
             onClick={goToNext}
-            className="absolute top-1/2 right-2 transform -translate-y-1/2 bg-blue-950 text-white rounded-full p-2 hover:bg-blue-900 transition duration-300"
+            className="absolute top-1/2 right-4 transform -translate-y-1/2 bg-blue-950 bg-opacity-80 text-white rounded-full p-3 hover:bg-blue-900 hover:bg-opacity-90 transition-all duration-300 shadow-lg z-10"
+            aria-label="Next images"
           >
-            &#10095;
+            <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+            </svg>
           </button>
 
           {/* Dots Navigation */}
-          <div className="absolute bottom-5 left-0 right-0 flex justify-center space-x-2">
-            {photos.map((_, idx) => (
-              <div
+          <div className="absolute bottom-4 left-0 right-0 flex justify-center space-x-2">
+            {Array.from({ length: maxSlides }, (_, idx) => (
+              <button
                 key={idx}
-                className={`w-2 h-2 rounded-full cursor-pointer ${
-                  currentIndex === idx ? 'bg-blue-950' : 'bg-gray-300'
+                className={`w-3 h-3 rounded-full transition-all duration-300 ${
+                  currentIndex === idx 
+                    ? 'bg-blue-950 scale-110 shadow-lg' 
+                    : 'bg-white bg-opacity-60 hover:bg-opacity-80'
                 }`}
                 onClick={() => setCurrentIndex(idx)}
-              ></div>
+                aria-label={`Go to slide ${idx + 1}`}
+              />
             ))}
           </div>
         </div>

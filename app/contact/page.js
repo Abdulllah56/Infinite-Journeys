@@ -1,4 +1,9 @@
 import React from 'react'
+export const metadata = {
+  title: 'Infinite Journeys | Contact Us',
+  description: 'Get in touch with Infinite Journeys',
+}
+
 import Link from 'next/link'
 import Navbar from '@/components/Navbar'
 import ContactForm from '@/components/ContactForm'

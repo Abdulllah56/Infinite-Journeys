@@ -19,7 +19,7 @@ const destinations = [
   {
     name: "Japan",
     imgUrl:
-      "https://zafigo.com/wp-content/uploads/2020/04/david-edelstein-N4DbvTUDikw-unsplash.jpg",
+      "https://media.digitalnomads.world/wp-content/uploads/2021/02/20120635/tokyo-for-digital-nomads.jpg",
     discount: "20% OFF",
   },
   {

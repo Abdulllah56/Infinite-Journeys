@@ -1,4 +1,9 @@
 import React from 'react'
+export const metadata = {
+  title: 'Infinite Journeys | Destinations',
+  description: 'Explore amazing destinations around the world with Infinite Journeys',
+}
+
 import DestinationHero from '@/components/destinations/DestinationHero'
 import PopularDestinations from '@/components/destinations/PopularDestinations'
 import TopExperiences from '@/components/destinations/TopExperiences'

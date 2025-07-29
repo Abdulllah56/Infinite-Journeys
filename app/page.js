@@ -1,4 +1,9 @@
 import Image from 'next/image';
+export const metadata = {
+  title: 'Infinite Journeys | Your Travel Adventure Begins Here',
+  description: 'Start your journey with Infinite Journeys - Your premier travel companion',
+}
+
 import LandingPageCard from "@/components/Home/LandingPageCard";
 import TestimonialCarousel from "@/components/Home/TestimonialCarousel";
 import WCU from "@/components/Home/WCU"
