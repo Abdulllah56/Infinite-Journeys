@@ -1,5 +1,5 @@
 // components/FuturePlans.js
-
+"use client"
 import React from 'react';
 import { FaLeaf, FaGlobe, FaRocket, FaLightbulb, FaHeart, FaMobile } from 'react-icons/fa';
 
