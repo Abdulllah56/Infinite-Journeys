@@ -70,57 +70,126 @@ const GroupCustomExperiences = () => {
   return (
     <section
       ref={sectionRef}
-      className="opacity-0 translate-y-8 transition duration-700 ease-in-out py-16 bg-gray-50 relative overflow-hidden"
+      className="opacity-0 translate-y-8 transition duration-700 ease-in-out py-20 bg-gradient-to-br from-white via-gray-50 to-blue-50 relative overflow-hidden"
     >
-      <div className="container mx-auto px-6">
+      {/* Background Decorations */}
+      <div className="absolute top-0 right-0 w-96 h-96 bg-gradient-to-bl from-purple-200/30 to-blue-200/30 rounded-full blur-3xl translate-x-1/2 -translate-y-1/2"></div>
+      <div className="absolute bottom-0 left-0 w-80 h-80 bg-gradient-to-tr from-blue-200/30 to-cyan-200/30 rounded-full blur-3xl -translate-x-1/2 translate-y-1/2"></div>
+      
+      <div className="container mx-auto px-6 relative z-10">
         {/* Section Title */}
-        <h2 className="text-5xl font-extrabold text-blue-950 text-center mb-16">
-          Group and Custom Experiences by Infinite Journeys
-        </h2>
+        <div className="text-center mb-16">
+          <div className="inline-block px-4 py-2 bg-gradient-to-r from-purple-100 to-blue-100 text-purple-800 rounded-full text-sm font-medium mb-4">
+            👥 Group & Custom
+          </div>
+          <h2 className="text-5xl md:text-6xl font-extrabold text-blue-950 mb-6">
+            Group & Custom 
+            <span className="block bg-gradient-to-r from-purple-600 to-blue-600 bg-clip-text text-transparent">
+              Experiences
+            </span>
+          </h2>
+          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+            Create unforgettable memories with your team, family, or friends through our specially designed group and custom travel experiences.
+          </p>
+        </div>
 
-        {/* Unique Layout with Icons and Logos */}
-        <div className="flex flex-col lg:flex-row gap-12 lg:gap-16 items-center">
-          {/* Left Section: Main Experience with Icon */}
-          <div className="lg:w-1/2 h-full relative flex flex-col items-center justify-center bg-blue-950 rounded-lg p-8 shadow-lg text-white transform hover:scale-105 transition duration-500">
-            <img
-              src={experiences[0].imageUrl}
-              alt={experiences[0].title}
-              className="absolute inset-0 w-full h-full object-cover opacity-20 rounded-lg"
-            />
-            {/* Overlay Content */}
-            <div className="relative z-10 flex flex-col items-center">
-              {experiences[0].icon}
-              <h3 className="text-4xl font-extrabold mb-4">{experiences[0].title}</h3>
-              <p className="text-lg mb-6">{experiences[0].description}</p>
-              <a
-                href="#"
-                className="inline-block bg-white text-blue-950 font-semibold py-3 px-8 rounded-full shadow-lg hover:bg-blue-100 transition duration-300"
-              >
-                Learn More
-              </a>
+        {/* Enhanced Layout */}
+        <div className="flex flex-col lg:flex-row gap-12 lg:gap-16">
+          {/* Featured Experience */}
+          <div className="lg:w-1/2 relative">
+            <div className="group relative h-[500px] overflow-hidden rounded-3xl shadow-2xl transform hover:scale-[1.02] transition-all duration-500">
+              <img
+                src={experiences[0].imageUrl}
+                alt={experiences[0].title}
+                className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+              />
+              
+              {/* Gradient Overlay */}
+              <div className="absolute inset-0 bg-gradient-to-t from-blue-950/90 via-blue-900/60 to-transparent group-hover:from-blue-950/95 group-hover:via-blue-900/70 transition-all duration-500"></div>
+              
+              {/* Featured Badge */}
+              <div className="absolute top-6 left-6">
+                <div className="px-4 py-2 bg-gradient-to-r from-purple-500 to-blue-500 text-white rounded-full text-sm font-bold shadow-lg">
+                  FEATURED
+                </div>
+              </div>
+
+              {/* Content */}
+              <div className="absolute inset-0 flex flex-col justify-center items-center text-center p-8 text-white">
+                {/* Icon Container */}
+                <div className="mb-6 p-6 bg-white/10 backdrop-blur-sm rounded-full border border-white/20 group-hover:scale-110 group-hover:bg-white/20 transition-all duration-300">
+                  {experiences[0].icon}
+                </div>
+                
+                <h3 className="text-4xl md:text-5xl font-extrabold mb-4 group-hover:text-purple-200 transition-colors duration-300">
+                  {experiences[0].title}
+                </h3>
+                <p className="text-lg mb-8 leading-relaxed opacity-90 group-hover:opacity-100 transition-opacity duration-300">
+                  {experiences[0].description}
+                </p>
+                
+                {/* CTA Button */}
+                <div className="opacity-0 group-hover:opacity-100 transition-all duration-300 transform translate-y-4 group-hover:translate-y-0">
+                  <a
+                    href="#"
+                    className="inline-flex items-center bg-gradient-to-r from-white to-gray-100 text-blue-950 font-bold py-4 px-8 rounded-full shadow-xl hover:from-purple-100 hover:to-blue-100 transform hover:scale-105 transition-all duration-300"
+                  >
+                    Learn More
+                    <svg className="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                    </svg>
+                  </a>
+                </div>
+
+                {/* Decorative Line */}
+                <div className="absolute bottom-0 left-0 w-full h-1 bg-gradient-to-r from-purple-500 to-blue-500 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left"></div>
+              </div>
             </div>
           </div>
 
-          {/* Right Section: Smaller Stacked Experiences with Icons */}
-          <div className="lg:w-1/2 flex flex-col gap-8">
+          {/* Secondary Experiences */}
+          <div className="lg:w-1/2 flex flex-col gap-6">
             {experiences.slice(1).map((experience, index) => (
               <div
                 key={index}
-                className="relative h-60 lg:h-64 rounded-lg overflow-hidden shadow-lg transform hover:scale-105 transition duration-500 flex items-center bg-blue-950 p-6 text-white"
+                className="group relative h-48 overflow-hidden rounded-2xl shadow-xl transform hover:scale-[1.02] transition-all duration-500"
               >
                 <img
                   src={experience.imageUrl}
                   alt={experience.title}
-                  className="absolute inset-0 w-full h-full object-cover opacity-20 rounded-lg"
+                  className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                 />
-                {/* Text and Icon Overlay */}
-                <div className="relative z-10 flex flex-row items-center gap-4">
-                  {experience.icon}
-                  <div>
-                    <h4 className="text-3xl font-extrabold mb-2">{experience.title}</h4>
-                    <p className="text-md">{experience.description}</p>
+                
+                {/* Overlay */}
+                <div className="absolute inset-0 bg-gradient-to-r from-blue-950/80 via-blue-900/60 to-transparent group-hover:from-blue-950/90 group-hover:via-blue-900/70 transition-all duration-500"></div>
+                
+                {/* Content */}
+                <div className="relative z-10 flex items-center h-full p-6 text-white">
+                  {/* Icon */}
+                  <div className="mr-6 p-3 bg-white/10 backdrop-blur-sm rounded-full border border-white/20 group-hover:scale-110 group-hover:bg-white/20 transition-all duration-300">
+                    {experience.icon}
+                  </div>
+                  
+                  {/* Text Content */}
+                  <div className="flex-1">
+                    <h4 className="text-2xl md:text-3xl font-extrabold mb-2 group-hover:text-purple-200 transition-colors duration-300">
+                      {experience.title}
+                    </h4>
+                    <p className="text-sm md:text-base text-gray-300 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                      {experience.description}
+                    </p>
+                  </div>
+
+                  {/* Arrow Icon */}
+                  <div className="opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                    <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                    </svg>
                   </div>
                 </div>
+
+                {/* Bottom Accent Line */}
+                <div className="absolute bottom-0 left-0 w-full h-1 bg-gradient-to-r from-purple-500 to-blue-500 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left"></div>
               </div>
             ))}
           </div>

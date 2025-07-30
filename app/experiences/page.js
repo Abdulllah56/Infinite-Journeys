@@ -15,25 +15,28 @@ import NormalFooter from '@/components/NormalFooter'
 
 const page = () => {
   return (
-    <div>
-        <div className='bg-blue-950'>
-        <Navbar />
+    <div className="min-h-screen bg-gradient-to-b from-gray-50 to-white">
+        {/* Navigation */}
+        <div className='bg-blue-950 shadow-lg'>
+          <Navbar />
         </div>
-        <HeroSection />
-        <br />
-        <ExperienceHighlights />
-        <br />
-        <ExperienceCategory />
-        <br />
-        <ExclusiveExperiences />
-        <br />
-        <NaturalWildlifeExperiences />
-        <br />
-        <GroupCustomExperiences />
-        <br />
-        <NormalFooter />
-       
         
+        {/* Hero Section */}
+        <HeroSection />
+        
+        {/* Content Sections with improved spacing */}
+        <div className="space-y-20">
+          <ExperienceHighlights />
+          <ExperienceCategory />
+          <ExclusiveExperiences />
+          <NaturalWildlifeExperiences />
+          <GroupCustomExperiences />
+        </div>
+        
+        {/* Footer */}
+        <div className="mt-20">
+          <NormalFooter />
+        </div>
     </div>
   )
 }
