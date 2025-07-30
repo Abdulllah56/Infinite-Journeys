@@ -296,7 +296,7 @@ export default function Home() {
                 <div className="relative group lg:order-1">
                   <div className="absolute inset-0 bg-gradient-to-r from-purple-600 to-pink-600 rounded-2xl transform -rotate-1 group-hover:-rotate-2 transition-transform duration-300"></div>
                   <img 
-                    src="https://cairngorms.co.uk/wp-content/uploads/2023/09/RS22525__scr-e1695214632666-1024x688.jpg" 
+                    src="https://cdn.britannica.com/65/162465-050-9CDA9BC9/Alps-Switzerland.jpg" 
                     alt="Luxury Accommodations" 
                     className="relative w-full h-80 object-cover rounded-2xl shadow-2xl transform group-hover:scale-105 transition-transform duration-500"
                   />
@@ -314,7 +314,7 @@ export default function Home() {
                 <div className="relative group">
                   <div className="absolute inset-0 bg-gradient-to-r from-green-600 to-blue-600 rounded-2xl transform rotate-1 group-hover:rotate-2 transition-transform duration-300"></div>
                   <img 
-                    src="https://www.civitatis.com/blog/wp-content/uploads/2021/06/ballena-alaska-portada.jpg" 
+                    src="https://static.toiimg.com/thumb/msid-96203700,width-748,height-499,resizemode=4,imgsize-239734/.jpg" 
                     alt="Adventure Tours" 
                     className="relative w-full h-80 object-cover rounded-2xl shadow-2xl transform group-hover:scale-105 transition-transform duration-500"
                   />

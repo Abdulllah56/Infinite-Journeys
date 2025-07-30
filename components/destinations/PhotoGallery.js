@@ -11,7 +11,7 @@ const photos = [
   },
 
   {
-    imageUrl: 'https://images.unsplash.com/photo-1519985176271-adb1088fa94c?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80',
+    imageUrl: 'https://media.cntraveller.com/photos/611be76bd5b6f5a4a3deeb8a/master/pass/engadin_giangiovanoli.jpg',
     altText: 'Beautiful Mountain View',
     location: 'Swiss Alps',
   },

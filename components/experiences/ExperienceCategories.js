@@ -28,6 +28,11 @@ const categories = [
     description: 'Fun-filled experiences designed for all ages, perfect for families.',
     imageUrl: 'https://www.welgrowgroup.com/img.php?file=welgrowgroupuploadsNew/package/images/pkg_156982254180_travel-by-family.jpg',
   },
+  {
+    name: 'Luxury',
+    description: 'Indulge in opulent experiences and high-end accommodations.',
+    imageUrl: 'https://www.tourmyindia.com/states/goa/image/luxury-getaways-goa.webp',
+  },
 ];
 
 const CategoriesSection = () => {
