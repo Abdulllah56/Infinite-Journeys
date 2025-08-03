@@ -56,7 +56,7 @@ export async function POST(request) {
       html: `
         <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
           <h2 style="color: #2563eb; border-bottom: 2px solid #2563eb; padding-bottom: 10px;">
-            New Contact Form Submission
+            New Contact Form Submission From Infinite Journeys
           </h2>
           
           <div style="background-color: #f8fafc; padding: 20px; border-radius: 8px; margin: 20px 0;">
@@ -124,10 +124,13 @@ export async function POST(request) {
   }
 }
 
+
 // Handle other HTTP methods
 export async function GET() {
   return NextResponse.json(
     { error: 'Method not allowed' },
     { status: 405 }
   );
+
+  
 }

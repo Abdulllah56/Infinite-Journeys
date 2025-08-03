@@ -34,7 +34,7 @@ const ContactForm = () => {
       });
 
       const data = await response.json();
-      
+
       if (response.ok) {
         setStatus('success');
         setShowSuccess(true);
@@ -62,10 +62,10 @@ const ContactForm = () => {
       {/* Background Elements */}
       <div className="absolute inset-0 bg-gradient-to-br from-blue-50 to-cyan-50 rounded-2xl shadow-2xl transform -rotate-1"></div>
       <div className="absolute inset-0 bg-white/80 backdrop-blur-sm rounded-2xl shadow-xl"></div>
-      
+
       {/* Success Message */}
       {showSuccess && (
-        <div className="absolute top-4 left-1/2 transform -translate-x-1/2 bg-green-500 text-white px-6 py-3 rounded-full shadow-lg animate-bounce">
+        <div className="absolute top-4 left-1/2 transform -translate-x-1/2 bg-blue-600 text-white px-6 py-3 rounded-full shadow-lg animate-bounce">
           Message sent successfully! We'll get back to you soon.
         </div>
       )}
@@ -95,7 +95,7 @@ const ContactForm = () => {
               className="peer w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-200 transition-all bg-white/50 backdrop-blur-sm"
               placeholder=" "
             />
-            <label 
+            <label
               htmlFor="name"
               className="absolute left-3 -top-2.5 bg-white px-2 text-sm text-gray-600 transition-all duration-300 transform"
             >
@@ -114,7 +114,7 @@ const ContactForm = () => {
               className="peer w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-200 transition-all bg-white/50 backdrop-blur-sm"
               placeholder=" "
             />
-            <label 
+            <label
               htmlFor="email"
               className="absolute left-3 -top-2.5 bg-white px-2 text-sm text-gray-600 transition-all duration-300 transform"
             >
@@ -134,7 +134,7 @@ const ContactForm = () => {
             className="peer w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-200 transition-all bg-white/50 backdrop-blur-sm"
             placeholder=" "
           />
-          <label 
+          <label
             htmlFor="subject"
             className="absolute left-3 -top-2.5 bg-white px-2 text-sm text-gray-600 transition-all duration-300 transform"
           >
@@ -153,7 +153,7 @@ const ContactForm = () => {
             className="peer w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-200 transition-all bg-white/50 backdrop-blur-sm resize-none"
             placeholder=" "
           ></textarea>
-          <label 
+          <label
             htmlFor="message"
             className="absolute left-3 -top-2.5 bg-white px-2 text-sm text-gray-600 transition-all duration-300 transform"
           >
